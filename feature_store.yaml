@@ -1,0 +1,25 @@
+project: fest_demo
+registry: data/registry.db
+provider: local
+offline_store:
+    type: feast_postgres.PostgreSQLOfflineStore 
+    host: postgres
+    port: 5432              
+    database: airflow
+    db_schema: public
+    user: airflow
+    password: airflow
+online_store:
+  type: redis
+  connection_string: "redis:6379" 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
