@@ -41,7 +41,7 @@ dataset_credit_history_view = FeatureView(
     features=[
         Feature(name="cnt_ch_req_eqs_3m", dtype=ValueType.INT64),  #Êîëè÷åñòâî çàïðîñîâ â ÁÊÈ Ýêâèôàêñ çà 3 ìåñ
         Feature(name="cnt_ch_req_nbki_3m", dtype=ValueType.INT64), #Êîëè÷åñòâî çàïðîñîâ â ÁÊÈ ÍÁÊÈ çà 3 ìåñ
-        Feature(name="cnt_ch_req_okb_3m", dtype=ValueType.INT64),  #Êîëè÷åñòâî çàïðîñîâ â ÁÊÈ ÎÊÁ çà 3 ìåñ
+        Feature(name="cnt_ch_req_okb_3m", dtype=ValueType.INT64),  #Êîëè÷åñòâî çàïðîñîâ â ÁÊÈ ÎÊÁ çà 3 ìåñ 
         Feature(name="cnt_ch_req_eqs_2m", dtype=ValueType.INT64),
         Feature(name="cnt_ch_req_nbki_2m", dtype=ValueType.INT64),
         Feature(name="cnt_ch_req_okb_2m", dtype=ValueType.INT64),
