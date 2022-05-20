@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+п»ї#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # vim:fileencoding=utf-8
 
@@ -41,9 +41,9 @@ dataset_credit_history_view = FeatureView(
     entities=["customer_rk"],
     ttl=Duration(seconds=86400 * 1),
     features=[
-        Feature(name="cnt_ch_req_eqs_3m", dtype=ValueType.INT64),  #Количество запросов в БКИ Эквифакс за 3 мес
-        Feature(name="cnt_ch_req_nbki_3m", dtype=ValueType.INT64), #Количество запросов в БКИ НБКИ за 3 мес
-        Feature(name="cnt_ch_req_okb_3m", dtype=ValueType.INT64),  #Количество запросов в БКИ ОКБ за 3 мес
+        Feature(name="cnt_ch_req_eqs_3m", dtype=ValueType.INT64),  #РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РїСЂРѕСЃРѕРІ РІ Р‘РљР Р­РєРІРёС„Р°РєСЃ Р·Р° 3 РјРµСЃ
+        Feature(name="cnt_ch_req_nbki_3m", dtype=ValueType.INT64), #РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РїСЂРѕСЃРѕРІ РІ Р‘РљР РќР‘РљР Р·Р° 3 РјРµСЃ
+        Feature(name="cnt_ch_req_okb_3m", dtype=ValueType.INT64),  #РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РїСЂРѕСЃРѕРІ РІ Р‘РљР РћРљР‘ Р·Р° 3 РјРµСЃ
         Feature(name="cnt_ch_req_eqs_2m", dtype=ValueType.INT64),
         Feature(name="cnt_ch_req_nbki_2m", dtype=ValueType.INT64),
         Feature(name="cnt_ch_req_okb_2m", dtype=ValueType.INT64),
@@ -63,9 +63,9 @@ dataset_socdem_view = FeatureView(
     features=[
         Feature(name="customer_age", dtype=ValueType.FLOAT),
         Feature(name="gender", dtype=ValueType.STRING),
-        Feature(name="vip_flg", dtype=ValueType.STRING),      #Признак вип
-        Feature(name="industry_nm", dtype=ValueType.STRING),  #Отрасль
-        Feature(name="bki_cons_flg", dtype=ValueType.STRING), #Признак согласия на запросы в БКИ
+        Feature(name="vip_flg", dtype=ValueType.STRING),      #РџСЂРёР·РЅР°Рє РІРёРї
+        Feature(name="industry_nm", dtype=ValueType.STRING),  #РћС‚СЂР°СЃР»СЊ
+        Feature(name="bki_cons_flg", dtype=ValueType.STRING), #РџСЂРёР·РЅР°Рє СЃРѕРіР»Р°СЃРёСЏ РЅР° Р·Р°РїСЂРѕСЃС‹ РІ Р‘РљР
     ],
     online=True,
     batch_source=dataset_socdem,
@@ -77,23 +77,23 @@ dataset_sal_view = FeatureView(
     entities=["customer_rk"],
     ttl=Duration(seconds=86400 * 1),
     features=[
-        Feature(name="avg_sal_amt_all_1y", dtype=ValueType.FLOAT), #Среднее зп-начисление из всех источников за 1 год
-        Feature(name="avg_sal_amt_all_6m", dtype=ValueType.FLOAT), #Среднее зп-начисление из всех источников за 6 мес
-        Feature(name="avg_sal_amt_all_3m", dtype=ValueType.FLOAT), #Среднее зп-начисление из всех источников за 3 мес
+        Feature(name="avg_sal_amt_all_1y", dtype=ValueType.FLOAT), #РЎСЂРµРґРЅРµРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 1 РіРѕРґ
+        Feature(name="avg_sal_amt_all_6m", dtype=ValueType.FLOAT), #РЎСЂРµРґРЅРµРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 6 РјРµСЃ
+        Feature(name="avg_sal_amt_all_3m", dtype=ValueType.FLOAT), #РЎСЂРµРґРЅРµРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 3 РјРµСЃ
         Feature(name="avg_sal_amt_all_2m", dtype=ValueType.FLOAT), 
         Feature(name="avg_sal_amt_all_1m", dtype=ValueType.FLOAT), 
         
-        Feature(name="sum_sal_amt_all_1y", dtype=ValueType.FLOAT), #Сумма зп-начисление из всех источников за 1 год
-        Feature(name="sum_sal_amt_all_6m", dtype=ValueType.FLOAT), #Сумма зп-начисление из всех источников за 6 мес
-        Feature(name="sum_sal_amt_all_3m", dtype=ValueType.FLOAT), #Сумма зп-начисление из всех источников за 3 мес
-        Feature(name="sum_sal_amt_all_2m", dtype=ValueType.FLOAT), #Сумма зп-начисление из всех источников за 2 мес
-        Feature(name="sum_sal_amt_all_1m", dtype=ValueType.FLOAT), #Сумма зп-начисление из всех источников за 1 мес
+        Feature(name="sum_sal_amt_all_1y", dtype=ValueType.FLOAT), #РЎСѓРјРјР° Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 1 РіРѕРґ
+        Feature(name="sum_sal_amt_all_6m", dtype=ValueType.FLOAT), #РЎСѓРјРјР° Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 6 РјРµСЃ
+        Feature(name="sum_sal_amt_all_3m", dtype=ValueType.FLOAT), #РЎСѓРјРјР° Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 3 РјРµСЃ
+        Feature(name="sum_sal_amt_all_2m", dtype=ValueType.FLOAT), #РЎСѓРјРјР° Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 2 РјРµСЃ
+        Feature(name="sum_sal_amt_all_1m", dtype=ValueType.FLOAT), #РЎСѓРјРјР° Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 1 РјРµСЃ
                 
-        Feature(name="max_sal_amt_all_1y", dtype=ValueType.FLOAT), #Максимальное зп-начисление из всех источников за 1 год
-        Feature(name="max_sal_amt_all_6m", dtype=ValueType.FLOAT), #Максимальное зп-начисление из всех источников за 6 мес
-        Feature(name="max_sal_amt_all_3m", dtype=ValueType.FLOAT), #Максимальное зп-начисление из всех источников за 3 мес
-        Feature(name="max_sal_amt_all_2m", dtype=ValueType.FLOAT), #Максимальное зп-начисление из всех источников за 2 мес
-        Feature(name="max_sal_amt_all_1m", dtype=ValueType.FLOAT), #Максимальное зп-начисление из всех источников за 1 мес
+        Feature(name="max_sal_amt_all_1y", dtype=ValueType.FLOAT), #РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 1 РіРѕРґ
+        Feature(name="max_sal_amt_all_6m", dtype=ValueType.FLOAT), #РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 6 РјРµСЃ
+        Feature(name="max_sal_amt_all_3m", dtype=ValueType.FLOAT), #РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 3 РјРµСЃ
+        Feature(name="max_sal_amt_all_2m", dtype=ValueType.FLOAT), #РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 2 РјРµСЃ
+        Feature(name="max_sal_amt_all_1m", dtype=ValueType.FLOAT), #РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·Рї-РЅР°С‡РёСЃР»РµРЅРёРµ РёР· РІСЃРµС… РёСЃС‚РѕС‡РЅРёРєРѕРІ Р·Р° 1 РјРµСЃ
     ], 
     online=True,
     batch_source=dataset_sal,
@@ -105,45 +105,45 @@ dataset_trn_view = FeatureView(
     entities=["customer_rk"],
     ttl=Duration(seconds=86400 * 1),
     features=[
-        Feature(name="min_trn_amt_usd_cash_4w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 4 недели
-        Feature(name="min_trn_amt_rub_cash_4w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 4 недели
-        Feature(name="min_trn_amt_usd_rtl_4w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 4 недели
-        Feature(name="min_trn_amt_rub_rtl_4w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 4 недели
+        Feature(name="min_trn_amt_usd_cash_4w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_cash_4w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_usd_rtl_4w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_rtl_4w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 4 РЅРµРґРµР»Рё
         
-        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 3 недели
-        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 3 недели
-        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 3 недели
-        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 3 недели
+        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 3 РЅРµРґРµР»Рё
         
-        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 2 недели
-        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 2 недели
-        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 2 недели
-        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 2 недели
+        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 2 РЅРµРґРµР»Рё
         
-        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 1 неделю
-        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 1 неделю
-        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 1 неделю
-        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 1 неделю
+        Feature(name="min_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="min_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="min_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="min_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 1 РЅРµРґРµР»СЋ
         
-        Feature(name="max_trn_amt_usd_cash_4w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 4 недели
-        Feature(name="max_trn_amt_rub_cash_4w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 4 недели
-        Feature(name="max_trn_amt_usd_rtl_4w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 4 недели
-        Feature(name="max_trn_amt_rub_rtl_4w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 4 недели
+        Feature(name="max_trn_amt_usd_cash_4w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_cash_4w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_usd_rtl_4w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 4 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_rtl_4w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 4 РЅРµРґРµР»Рё
         
-        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 3 недели
-        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 3 недели
-        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 3 недели
-        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 3 недели
+        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 3 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 3 РЅРµРґРµР»Рё
         
-        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 2 недели
-        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 2 недели
-        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 2 недели
-        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 2 недели
+        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 2 РЅРµРґРµР»Рё
+        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 2 РЅРµРґРµР»Рё
         
-        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в долларах по снятию наличных за 1 неделю
-        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #Минимальная сумма транзакции в рублях по снятию наличных за 1 неделю
-        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в долларах в категории Retail за 1 неделю
-        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #Минимальная сумма транзакции в рублях в категории Retail за 1 неделю
+        Feature(name="max_trn_amt_usd_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="max_trn_amt_rub_cash_3w", dtype=ValueType.INT64), #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РїРѕ СЃРЅСЏС‚РёСЋ РЅР°Р»РёС‡РЅС‹С… Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="max_trn_amt_usd_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ РґРѕР»Р»Р°СЂР°С… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 1 РЅРµРґРµР»СЋ
+        Feature(name="max_trn_amt_rub_rtl_3w", dtype=ValueType.INT64),  #РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° С‚СЂР°РЅР·Р°РєС†РёРё РІ СЂСѓР±Р»СЏС… РІ РєР°С‚РµРіРѕСЂРёРё Retail Р·Р° 1 РЅРµРґРµР»СЋ
     ],
     online=True,
     batch_source=dataset_trn,
