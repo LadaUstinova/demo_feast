@@ -4,7 +4,7 @@ jobs:
   Feast-apply:
     runs-on: self-hosted
     steps:
-      - run: echo "Start applying features into Feast"
+      - run: sudo echo "Start applying features into Feast"
       - name: Check out repository code
         uses: actions/checkout@v1
       - run: |
