@@ -4,4 +4,4 @@ jobs:
   Feast-apply:
     runs-on: self-hosted
     steps: 
-      - run: cd && ls
+      - run: ls
