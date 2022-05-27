@@ -3,5 +3,5 @@ on: [push]
 jobs:
   Feast-apply:
     runs-on: self-hosted
-    steps:
-      - run: echo "This job's status is ${{ job.status }}." 
+    steps: 
+      - run: cd && ls
