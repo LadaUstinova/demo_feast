@@ -1,10 +1,4 @@
-name: Applying features 
-env:
-  AWS_SECRET_ACCESS_KEY: "4qBhtOZHVES-3NqEe-bErGPxWaZwIrQRUUk6v9jn"
-  AWS_ACCESS_KEY_ID    : "OGUruVnslHlArHK5aCrs"
-  FEAST_S3_ENDPOINT_URL: "https://storage.yandexcloud.net"
-  AWS_DEFAULT_REGION   : "ru-central1"
-  
+name: Applying features  
 on: [push]
 jobs:
   Feast-apply:
