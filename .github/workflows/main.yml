@@ -4,7 +4,5 @@ jobs:
   Feast-apply:
     runs-on: self-hosted
     steps:
-      - run: cd /demo_feast/airflow/feast/
-      - name: Check out repository code
-        uses: actions/checkout@v1
-      - run: feast apply
+    - name: Check out repository code
+      run : echo "Start applying features into Feast"
