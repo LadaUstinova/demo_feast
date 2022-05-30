@@ -2,7 +2,8 @@ name: Applying features
 on: [push]
 jobs:
   Feast-apply:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    #self-hosted
     steps:    
     - name: Check start CI/CD
       run : echo "Start CI/CD"
