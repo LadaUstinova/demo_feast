@@ -3,6 +3,14 @@ on: [push]
 jobs:
   Feast-apply:
     runs-on: self-hosted
-    steps:
-    - name: Check out repository code
-      run : echo "Start applying features into Feast"
+    steps:    
+    - name: Check start CI/CD
+      run : echo "Start CI/CD"
+
+    - name: Start feast 
+      uses: actions/checkout@v1
+      
+    - name: Start Feast apply
+      run : |
+        echo "Start applying features into Feast"
+        feast apply
