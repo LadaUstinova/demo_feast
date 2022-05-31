@@ -7,9 +7,6 @@ jobs:
     - name: Git clone our repo 
       uses: actions/checkout@v1
       
-    - name: Check start CI/CD
-      run : echo "Start CI/CD"
-      
     - name: Export enviroments
       uses: aws-actions/configure-aws-credentials@v1
       with: 
@@ -18,6 +15,4 @@ jobs:
         aws-region           : ${{ secrets.AWS_DEFAULT_REGION }}
 
     - name: Start Feast apply
-      run : |
-        echo "Start applying features into Feast"
-        feast apply  
+      run : feast apply  
