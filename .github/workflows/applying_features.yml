@@ -13,9 +13,9 @@ jobs:
     - name: Start CI/CD
       run : |
         echo "Start CI/CD"
-        ls -la
+        ls 
 
     - name: Start Feast apply
       run : |
-        pip install feast
+        pip install requirements.txt
         feast apply  
