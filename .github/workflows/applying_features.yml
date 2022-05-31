@@ -11,7 +11,11 @@ jobs:
         feast-version: 0.16.1
     
     - name: Start CI/CD
-      run : echo "Start CI/CD"
+      run : |
+        echo "Start CI/CD"
+        ls -la
 
     - name: Start Feast apply
-      run : sudo feast apply  
+      run : |
+        pip install feast
+        feast apply  
