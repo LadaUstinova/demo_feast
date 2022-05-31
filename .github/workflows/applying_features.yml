@@ -3,12 +3,12 @@ on: [push]
 jobs:
   Feast-apply:
     runs-on: self-hosted
-    steps:    
-    - name: Check start CI/CD
-      run : echo "Start CI/CD"
-      
+    steps:          
     - name: Git clone our repo 
       uses: actions/checkout@v1
+      
+    - name: Check start CI/CD
+      run : echo "Start CI/CD"
       
     - name: Export enviroments
       uses: aws-actions/configure-aws-credentials@v1
