@@ -2,13 +2,15 @@ name: Applying features
 on: [push]
 jobs:
   Feast-apply:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./airflow/feast
+        working-directory: ./demo_feast
     steps:    
     - name: Check start CI/CD
-      run : echo "Start CI/CD"
+      run : |
+        echo "Start CI/CD"
+        ls -la
       
     - name: Git clone our repo 
       uses: actions/checkout@v1
