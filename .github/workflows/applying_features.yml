@@ -13,6 +13,10 @@ jobs:
     - name: Start CI/CD
       run : |
         echo "Start CI/CD"
+<<<<<<< HEAD
+=======
+        ls 
+>>>>>>> acca9b7103f18901e03cbd2b66081954ea2f149a
 
     - name: Install requirements
       run : pip install -r requirements.txt 
