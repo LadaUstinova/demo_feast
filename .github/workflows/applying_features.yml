@@ -1,26 +1,26 @@
-name: Applying features    
+name: Applying features 
 on: [push]
 jobs:
   Feast-apply:
-    runs-on: self-hosted
-    defaults:
-      run:
-        working-directory: ./airflow/feast
-    steps:    
-    - name: Check start CI/CD
-      run : echo "Start CI/CD"
+    runs-on: ubuntu-latest
+    steps: 
       
     - name: Git clone our repo 
       uses: actions/checkout@v1
+      with: 
+        feast-version: 0.16.1
+    
+    - name: Start CI/CD
+      run : |
+        echo "Start CI/CD"
+
+    - name: Install requirements
+      run : pip install -r requirements.txt 
       
     - name: Export enviroments
-      uses: aws-actions/configure-aws-credentials@v1
-      with: 
-        aws-access-key-id    : ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-access-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region           : ${{ secrets.AWS_DEFAULT_REGION }}
-
-    - name: Start Feast apply
       run : |
-        echo "Start applying features into Feast"
-        feast apply  
+        export AWS_SECRET_ACCESS_KEY=4qBhtOZHVES-3NqEe-bErGPxWaZwIrQRUUk6v9jn
+        export AWS_ACCESS_KEY_ID=OGUruVnslHlArHK5aCrs
+        export FEAST_S3_ENDPOINT_URL=https://storage.yandexcloud.net
+        export AWS_DEFAULT_REGION=ru-central1
+        feast apply
