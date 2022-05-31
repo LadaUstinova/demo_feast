@@ -4,10 +4,8 @@ jobs:
   Feast-apply:
     runs-on: self-hosted
     steps: 
-    - name: In
-      run : |
-        cd /home/lada/demo_feast/airflow/feast/
-        echo "in directory"
+    - name: Start CI/CD
+      run : echo "Start CI/CD"
       
     - name: Git clone our repo 
       uses: actions/checkout@v1
