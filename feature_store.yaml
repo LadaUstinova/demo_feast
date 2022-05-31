@@ -1,9 +1,9 @@
 project: fest_demo
-registry: data/registry.db
+registry: s3://rnd-feast/registry.db
 provider: local
 offline_store:
     type: feast_postgres.PostgreSQLOfflineStore 
-    host: postgres
+    host: 172.19.0.3
     port: 5432              
     database: airflow
     db_schema: public
@@ -11,11 +11,11 @@ offline_store:
     password: airflow
 online_store:
   type: redis
-  connection_string: "redis:6379" 
+  connection_string: "172.19.0.2:6379" 
   
   
   
-  
+#registry: data/registry.db
   
   
   

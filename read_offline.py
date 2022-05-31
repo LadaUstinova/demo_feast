@@ -1,24 +1,21 @@
-from datetime import datetime, timedelta
+from datetime import datetime
+from datetime import timedelta
 from feast import FeatureStore
+import pandas as pd
 
-# Initialize a FeatureStore with our current repository's configurations
+entity_df = pd.DataFrame.from_dict(
+    {
+        "customer_rk": [688, 689, 699],
+        "event_timestamp": [
+            datetime.now() - timedelta(days=60, minutes=36),
+            datetime.now() - timedelta(days=60, minutes=36),
+            datetime.now() - timedelta(days=60, minutes=36),
+        ],
+    }
+)
 store = FeatureStore(repo_path=".")
-
-# Get training data
-now = datetime.now()
-two_days_ago = datetime.now() - timedelta(days=2)
-
 training_data = store.get_historical_features(
-    entity_df=f"""
-    select 
-        src_account as user_id,
-        timestamp,
-        is_fraud
-    from
-        feast-oss.fraud_tutorial.transactions
-    where
-        timestamp between timestamp('{two_days_ago.isoformat()}') 
-        and timestamp('{now.isoformat()}')""",
+    entity_df=entity_df,
     features=[
         "dataset_credit_history:cnt_ch_req_eqs_3m",
         "dataset_credit_history:cnt_ch_req_eqs_2m",
@@ -31,4 +28,6 @@ training_data = store.get_historical_features(
     full_feature_names=True
 ).to_df()
 
-training_data.head()
+print(training_data.head())
+
+
