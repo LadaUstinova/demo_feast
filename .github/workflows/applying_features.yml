@@ -20,4 +20,4 @@ jobs:
     - name: Start Feast apply
       run : |
         echo "Start applying features into Feast"
-        feast apply
+        feast apply 
