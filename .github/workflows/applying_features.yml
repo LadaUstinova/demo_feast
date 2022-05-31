@@ -8,4 +8,4 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Start Feast apply
-      run : feast apply  
+      run : sudo feast apply  
