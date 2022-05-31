@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./demo_feast
+        working-directory: /home/lada/demo_feast/airflow/feast
     steps:    
     - name: Check start CI/CD
       run : |
