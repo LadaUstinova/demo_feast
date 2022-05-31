@@ -6,7 +6,7 @@ jobs:
     steps: 
       
     - name: Git clone our repo 
-      uses: actions/setup-feast@v0.16.1
+      uses: actions/checkout@v1
       with: 
         feast-version: 0.16.1
     
