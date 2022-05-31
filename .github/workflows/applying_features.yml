@@ -2,13 +2,16 @@ name: Applying features
 on: [push]
 jobs:
   Feast-apply:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps: 
-    - name: Start CI/CD
-      run : echo "Start CI/CD"
       
     - name: Git clone our repo 
-      uses: actions/checkout@v1
+      uses: actions/setup-feast@v0.16.1
+      with: 
+        feast-version: 0.16.1
+    
+    - name: Start CI/CD
+      run : echo "Start CI/CD"
         
     - name: Export enviroments
       uses: aws-actions/configure-aws-credentials@v1
