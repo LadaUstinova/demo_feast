@@ -6,7 +6,12 @@ jobs:
     defaults:
       run:
         working-directory: /home/lada/demo_feast/airflow/feast/
-    steps:          
+    steps: 
+    - name: In
+      run : |
+        cd /home/lada/demo_feast/airflow/feast/
+        echo "in directory"
+      
     - name: Git clone our repo 
       uses: actions/checkout@v1
         
@@ -15,6 +20,7 @@ jobs:
       with: 
         aws-access-key-id    : ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region           : ${{ secrets.AWS_DEFAULT_REGION }}
 
     - name: Start Feast apply
       run : sudo feast apply  
