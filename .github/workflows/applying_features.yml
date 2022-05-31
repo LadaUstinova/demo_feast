@@ -19,11 +19,11 @@ jobs:
       run : pip install -r requirements.txt 
       
     - name: Export enviroments
-      uses: aws-actions/configure-aws-credentials@v1 
-      with: 
-        aws-access-key-id    : ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region           : ${{ secrets.AWS_DEFAULT_REGION }}
+      run : |
+        export AWS_SECRET_ACCESS_KEY=4qBhtOZHVES-3NqEe-bErGPxWaZwIrQRUUk6v9jn
+        export AWS_ACCESS_KEY_ID=OGUruVnslHlArHK5aCrs
+        export FEAST_S3_ENDPOINT_URL=https://storage.yandexcloud.net
+        export AWS_DEFAULT_REGION=ru-central1
       
     - name: Start Feast apply
       run : feast apply
