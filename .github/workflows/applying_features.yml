@@ -17,5 +17,6 @@ jobs:
 
     - name: Start Feast apply
       run : |
-        pip install requirements.txt
+        pip install feast
+        pip install feast[redis]
         feast apply  
