@@ -1,4 +1,4 @@
-name: Applying features   
+name: Applying features    
 on: [push]
 jobs:
   Feast-apply:
